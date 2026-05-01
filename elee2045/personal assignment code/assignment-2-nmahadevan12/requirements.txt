@@ -1,0 +1,14 @@
+# ELEE 2045 Assignment 2 Requirements
+
+## Hardware
+M5StickC Plus 2
+USB-C Data Cable
+
+## M5 IDE Setup
+M5 Arduino IDE 2.0+
+M5StickCPlus2 Library
+M5 Board Manager
+
+## Python Dependencies
+pyserial==3.5
+Pillow>=9.0.0

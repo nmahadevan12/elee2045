@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+assistant.db
+audio_uploads/*
+!.gitkeep

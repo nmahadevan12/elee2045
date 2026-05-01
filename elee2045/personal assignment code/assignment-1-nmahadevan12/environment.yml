@@ -1,0 +1,8 @@
+name: robot_arm_env
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - pygame==2.6.1

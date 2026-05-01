@@ -1,0 +1,399 @@
+Here's the transcription of the audio, along with a summary of the main points discussed.
+
+## **Transcription**
+
+**00:00**
+
+I guess we still have one minute, but it'll be okay. So you probably have been watching me if you've been in here. But I basically did what I'm going to do automatically for everybody because obviously, I'm not going to cut and paste 60 people's questions in here. But give yourself a quiz on the common issues program. So this is the first prompt I gave it, which I basically just cut and pasted the two programs in there and I said, “Give me a quiz on these.” 
+
+I would definitely focus your studies on the second problem because that is probably the easiest one for me to do this all on because it's much more complicated. You're going to need to study. So I might change this a little bit, the prompt I use a little bit, but rather than just make me a five-question quiz, I will probably—you know, AI prompting is all about context, right? 
+
+And so I didn't give it any context. And so I'm probably going to give it a lot more context, like here's the lectures, right? So I'm going to give it like the blobs of here's the lectures, here's what we talked about in class, like this is what I focused on when I opened my mouth, right? I'm going to give it the actual assignment and then I'm going to give it “here's the students' programs that they wrote.” 
+
+Generate me a quiz that focuses on the concepts within here as opposed to the very specific lines of code that it gave me and I failed on, right? Like, what was the purpose of that semicolon over there? Like, wait a second, that's a lot. And so it's mostly conceptual, yeah. 
+
+This is a fantastic study resource, okay? This is what I recommend you do. I recommend you drop your programs in there and start asking yourself questions: “Do you really understand it?” That's my recommendation. Of course, you can go back and review the lectures. Of course, you can go back and of course, look at your code, right? 
+
+I think there's no substitute for actually looking at your code and understanding your code. And so the quiz is going to be about your code or at least it's going to reference your code. And so if you ended up—and this is the danger of using some of the—like doing really, really cool stuff, right? Is that you're going to have to understand it. And so the burden's going to be on you to be like, okay, how exactly does that function work? Why did it do that? 
+
+**02:46**
+
+The only thing I'm a little bit maybe concerned with is there's some moments in programming where you actually don't know the answer and it's okay. And so it actually—it almost picked up on that, which is actually kind of funny to me because one of the questions was about a function that I wrote over in Python, or I knew it had to happen, but I didn't know it existed. 
+
+But basically it was an endianness swap that needed to happen, and it had a function in there of “swap bytes.” And I didn't actually know “swap bytes” was a function, but it basically takes in sets of two and it swaps them around inside a list or a byte buffer, which I didn't even know existed. But it picked up on that somehow, that that was a weird thing and asked me a quiz question on it. 
+
+So that's why I'm going to end up probably prompting this a little bit differently because my point is not to test your Python and C++ knowledge here, right? My point is, did you know what you were doing when you wrote your code? Or at least could you understand what this program did? Right? Can you have ownership over that actual code? 
+
+And so again, take your actual programs, plug them in. I'm also going to provide you sort of my solution programs. So I'll give you this one. This is sort of like a half-baked one, but it does sort of the basics of there, you know, sort of like turn on and off the display, right? It's very responsive. 
+
+It's done in a state machine way, which is a little different than maybe you all coded it in, but it is very responsive as a result of that. And the first one as well. But again, I'm going to focus the quiz on the second part. And so the Arduino program that talks to the Python program, that was really the big part of that assignment anyway, right? Is how do you do serial communication between two devices? And especially when one of them is a microcontroller. 
+
+**05:22**
+
+Today, though, we are going to focus on sort of—I would say one of the main topics for the class actually, and why I distribute you know these devices. The Internet of Things and sort of how you program for them and how you make best use of that. 
+
+So the Internet of Things is a term that probably came around 10 years ago as more and more devices were getting connected to the internet, right? So the writing's on the wall that everything in your life, from of course your cell phone and your computer, to your toaster oven, was going to be online, right? It was going to have something in it that could communicate. 
+
+So your car, your sprinkler system, your refrigerator—I'm actually labeling things that I have that are—I actually have a whole house of stuff. I can go to home.drjohnson.com and there's my house. And all the stuff that's in my house, including my cameras at my house. 
+
+And so this is kind of the Internet of Things. And the Internet of Things is really useful actually in the age of AI, right? So not only is it just data, it's also control, right? I can go in here and—hopefully I secured this enough—and change my thermostat around. And if nobody's home or whatever, my dog's there, so I'm not going to make it super cold. 
+
+But you know, make it so that you can affect the world. So it's control. I can see the energy usage of my house at any given moment. I have an electric car, so that's why I'm using so much energy on certain days of the week. I can even see—let's see, this is a pretty good one—I've got a radon meter in my basement. Look what happened a few days ago actually, it's pretty cool. I guess it's not that cool, but when it rained, it spiked up to kind of dangerous levels because that's what happens when it rains. 
+
+**07:29**
+
+And if you're not paying attention to these things, you might not actually notice it. And so the Internet of Things, again, ranging from physical infrastructure to biological things, right? Smartwatches and stuff like that. It's all this data about the world that now we actually have a way to pay attention to, which I think is really cool. 
+
+And so maybe 20 years ago or 10 years ago even, we might have been able to do these things, but we had no system that was smart enough to really pay attention to this stuff, to really integrate it all together and do something useful, right? Actually make our lives better. And I think that we're actually getting to that point now. 
+
+Being able to build all these tools. So funny story, these little things down here—maybe not funny story, kind of cool story—there was no existing plugin for Home Assistant. Home Assistant's an open-source project to build these sort of dashboards. But there was no existing project for interfacing with my camera systems. 
+
+And so this was a pretty big lift, frankly, for vibe coding. But it took me about five hours, but I did figure it out: of how to do all the web scraping necessary out of the existing web interface to be able to pull these direct WebRTC feeds into Home Assistant and build a component and publish that component as a Home Assistant component that other people can use if they have the same camera systems that I have at my house. 
+
+You can do all these things. This actually did not—this was not magic. You need to understand the internet a little bit better, and of course the coding platforms, limitations of them, right? There's a lot of like access privilege stuff that you need to start understanding. 
+
+But actually, it's fun that I did this because it's really the topic for today's lecture. It almost had nothing to do with it, but you can certainly build something like this yourself. You might not have as many devices as I have at my house. I'm a little bit of a nerd when it comes to this stuff. But you can start adding things because this little guy here is perfectly able to be a sensor that I add to this Home Assistant, right? 
+
+And so everybody in the class, right, can have a Home Assistant. Maybe I'll add that to my Home Assistant, just have everybody code something that feeds data into this, which might be fun. So anyway, something that you can do. And certainly this is a good step in the right direction because a lot of those devices that you see here in there actually have an ESP32 in them. 
+
+Because ESP32 is almost the de facto standard in how you build these things because they're inexpensive, they have Wi-Fi, they have Bluetooth, and they're a microcontroller. They're not necessarily low, low power. So that typically is going to be a board that doesn't have Wi-Fi. Wi-Fi is just not a low-power system, even though like your cell phone only lasts like a day on battery, right? 
+
+And this isn't even—it won't even last a day. This will last just a few hours continuously running on battery. And a lot of that is just the communication that's inside there. So if you want to do super low power, you've got to dive down into Bluetooth Low Energy or similar. And that will really get you down into the devices like the smartwatch battery will last, you know, two months before it dies because it's just Bluetooth and it's, again, very, very low power, but also very low bandwidth and new constraints on that. 
+
+**10:46**
+
+Anyway, today we're going to talk about sort of the basics of IoT, sort of what you can actually build with it, and I've kind of been talking about it already. And get into a little bit of the nuts and bolts of sort of what are core IoT technologies, industry standards that you should be aware of. Essentially things these devices tend to talk to so that other things can pick them up. 
+
+So why is PowerPoint so bad? All right, we're not going to do—we're going to do this mode. No, ah, now I got it. Primary monitor, but I'm just going to skip it anyway and do reading mode. 
+
+So the field is defined by these basic four things. The big one's connectivity. So you need to have some way of reaching another device somewhere. Your M5Stick, we've seen how you can communicate with a device that's directly attached to it. That's typically not the IoT world. Typically it's Wi-Fi or Bluetooth, but connectivity is a major part, you know? The device has to have some means of interfacing with the world. 
+
+There are other options, by the way. You can do like light signals, right? So you can do like infrared. This actually has the infrared transmitter. I might have mentioned that at the beginning of class, but you can certainly like build something for—you could be really annoying in class. I'm sure these have an infrared receiver and like turn off the projectors on me or something like that using the M5Stick. 
+
+There's actually an already existing program for them you can download, just put them on there, and it'll give you the ability like cycle through TV codes to turn them off. But it does have that infrared transmitter. Those are those two dots in the front. And so that's one way that you can communicate is by infrared. 
+
+**13:02**
+
+This doesn't have an infrared receiver, unfortunately, otherwise I would definitely use it, but you could certainly build one. But connectivity is sort of a big part. These other three things are sort of the constraints. And so connectivity is the big feature, and I guess computation at some level, but everything has computation. 
+
+But it's really important that you manage power typically in IoT. So a lot of times you're operating on battery or you need to be able to operate in uncertain battery conditions. Maybe it's a solar-powered system and you sort of need to still manage things even if you do have some sort of continuous source. Or maybe it is a Bluetooth device of some sort, and that has to operate for a really long amount of time. 
+
+Like a security sensor or something like that in the house that is completely wireless, and the homeowner doesn't want to change the battery every five minutes, right? They want it to last a year or so before they have to change it. Security is another sort of interesting problem with these, right? So they're low power, they don't necessarily have like login systems. Like, how do you actually make it so that the data is being transmitted securely? 
+
+You know, are you able to encrypt the data, things like that? And then lastly, cost, right? These need to be super cheap. If they're going to be everywhere, they can't be expensive. They can't be cell phones, right? And so these devices at scale are like a dollar each, right? And so like that's sort of the smallest amount you're going to pay for like a smart light bulb or something like that that has one of these in it. Almost every smart light bulb, by the way, has an ESP32 inside of it, or a smart light outlet switch or whatever. They all have ESP32s inside them. 
+
+**14:48**
+
+There's just a few examples. Right? You saw my home automation system just a second ago. But—and that's running actually at my house, by the way. It's running on a Chromebook, an old Chromebook that I have. And so that's the right way to do Home Assistant. You can also like pay for your own dashboard that's like on the web, but it's better just try to do things locally with it. 
+
+But smart parking lots are a thing. I don't know if Tate might have something or something like this where they're actually measuring it, but a lot of like big theme parks and things like that will tell you where like spaces are open and stuff like that, and they're monitoring that all the time. 
+
+And then digital twins is another really cool topic where you might have heard that term where like a machine is being monitored with a ton of different sensors, and there's actually a virtual version of that that's identical to it from a sensing perspective and then also can sort of extrapolate from that and run simulations on that to see sort of like when it needs maintenance and things like that. 
+
+And so lots of different examples of IoT. I think this automation thing is the big one, though. It's like, I have a thing in the world that I want to be able to sense and change in some way. How do I actually do that? You know, what are the things I need to do? So a lot of the benefit is telemetry, but then that control is certainly possible and extremely useful. So telemetry meaning measuring remotely. 
+
+**16:11**
+
+In order to engage with the internet, you need to know about the internet. You may think you know the internet, but you might engage with the internet at a very like user level, not at a deep level. It's important to understand the concepts at a fairly deep level. 
+
+So I don't know how much this was discussed in Info 2000. I think it's falling by the wayside a little bit. We used to bring this up a lot in Info 2000. Who here in Info 2000 did you learn about Internet Protocol? Okay, I'm seeing a big no. I'm glad I'm bringing this back up. Maybe this is the class that it needs to be in, because it's really, really, really important. 
+
+Right, the entire world is built on this right now. Literally the Internet Protocol. So the Internet Protocol is not something that you necessarily directly engage in, but a lot of the things that are built on it use the terminologies from it. So you don't really write IP. You can write IP; it's not impossible to write IP directly. It's just it is not something that you typically speak directly. 
+
+You're typically speaking a higher-level protocol, and we'll get into that in a second. But it's very important that you understand what IP is. IP is the routing system. IP is the addresses. You've heard of IP addresses. You go on your computer and find one of many IP addresses that you have. 
+
+**17:34**
+
+So if I open this up and I say `ipconfig`, it might be a little bit different on Mac, it's going to be like `ifconfig`. But `ipconfig` on here, you can see these different IP addresses. This is the Internet Protocol v4 address with these what looks like four—like these separated numbers. These are actually—this is a 32-bit number. 
+
+And it's written out in decimal, but really, if you were going to write it out, it would be a 32-bit binary value or eight hexadecimal characters. So a lot of different ways to write it, but what you're seeing is the decimal representation. So each of these things between the dots is a number between 0 and 255. 
+
+This is one of the important ones to know. There's also this IPv6 which the world has actually moved on to without anybody knowing. And so IPv6 is sort of an upgrade for this, uses I think 128-bit addresses, which is more particles than there are in the universe. And so literally everything can have its own IP address. 
+
+The reality, though, is that IPv4 addresses are plenty sufficient for what we actually have, especially if a lot of the backend is using IPv6, you don't have to be aware of it. And so IPv4, which is these 32-bit addresses, are really important. So you can see this link-local IPv6, it's like, okay, it's local, I don't have to really worry about it. And that is a massive long string of hexadecimal characters in this case that lets your computer basically uniquely identify. 
+
+**19:07**
+
+But you can actually have lots of IP addresses. You can be on lots of different networks. And so this is your address on that particular network. It's how when one device wants to communicate with you, it needs to know your IP address so it can send you a message. IP is for device-to-device communication, all right? 
+
+And that's sort of a very key idea. So it's how my computer communicates with another computer that is on the internet, or a server that's on the internet, or a router that's on the internet. Everything has an IP address. It's not an application-layer communication protocol. 
+
+The next level isn't even an application-level communication protocol. So IP is how when I'm sending data, I communicate. It's how I'm packaging the structures. There's an even lower level, sometimes known as the link level. The link level is like, I'm using serial, or I'm using Ethernet, or I'm using Wi-Fi. Nobody talks that stuff. 
+
+It's possible to, right, if you have to develop a—you know, an Ethernet adapter that goes inside a computer someday, you'll have to learn how to talk that structure. But that's literally how you toggle it even lower level but physical. You're typically working on those together, but how you toggle, you know, the voltage on the line, right? 
+
+**20:25**
+
+Or the power in a particular frequency, right? It's that level to do the communication of the bits and bytes. But IP is what we're talking about right now. And so that's just really the addresses. It's how you say address and then blob of data that goes along with that. That's basically what an IP packet would look like, is you say, “Here's this address and then I want this blob of data to be sent to it.” 
+
+There's some restrictions to that in terms of like how big they can be to be routed on the internet. And so typically with IP, you send out these IP packets and you hope that the thing you send it to, which is typically your gateway, knows how to send it further. And so everything that gets it knows how to go further. 
+
+And so it's just like actually sending—it's almost almost exclusively built on the ideas of how sending mail works. And so you don't know how to reach your grandma in Tulsa, Oklahoma or whatever, right? All you have to do is write the address on it that you know and put it in the mailbox and somehow magically it gets to her. 
+
+And it's not because the postal worker who picked up your, you know, your letter knows how to get it there either, right? They know how to deliver it to the next thing on the chain that knows how to get it to the next thing that knows how to get it to the next thing, and eventually you get to a point where you reach the endpoint where, “Oh, I actually know Grandma and I'm going to deliver it to her.” It works the exact same way. It's identical. Except it's machines doing the routing instead of human beings. 
+
+Although the mail nowadays is a lot of machines doing the routing and so it kind of works identically now. In fact, I think there's like joke things of like sending internet data through snail mail. Like the IP gets like printed out and turned into a message, like a, and then it gets sent and then unpackaged and anyway. 
+
+**21:55**
+
+So that is sort of the physical layer of sort of how things go around. On top of this, you typically have these other two things which are operating system level communication mechanisms called TCP and UDP. These are really important. These you could actually end up writing at some point. 
+
+But the key things that come from TCP and UDP are a way to sort of package messages that get delivered between applications, okay? And that way, that mechanism, is literally adding one thing to the IP address, which is a port. 
+
+Right? So TCP and UDP, the big thing they add that is different from IP, which is computer to computer, really network adapter to network adapter if I'm being very specific on it, because your computer can have multiple IP addresses. But TCP and UDP add this port idea. It's kind of like if you were sending mail between—you could think of the Internet Protocol as like sending to a post office box and then the actual port as being a particular, you know, house on the street. 
+
+Or if you want to think about it, like if you send mail to UGA, it goes to one place and then there's a bunch of mailboxes or, right, that it can actually go to, or an apartment where you had, “Okay, here the people living there, but you know when you send the mail you actually just send it to the apartment.” 
+
+Right? So it's another layer, it's another piece of information that more specifically defines what application this is supposed to be delivered to. It's the application on your computer or on the device that opened that port. That said, “Oh, I want data on this port, operating system.” And your operating system says, “Sure, anything that comes in from now on on that port, I'm going to give you that data.” 
+
+**23:44**
+
+Turns out you also send data that way. And so when I send data, I say, “I'm going to send it out of this port.” And so—like you basically open up this pipe in in your program to receive data from networks. Right? So that's all TCP and UDP do really. Now why are there two things? 
+
+Why is there TCP, which stands on top of IP, so sometimes you see this as `TCP/IP`? Means TCP over IP. Nobody ever says UDP over IP, but that's actually what happens. TCP is a very important one. It's what the internet mostly works on because at a an operating system or a device-to-device level, it is a guaranteed delivery system. It's kind of like registered mail at some level, right? 
+
+So you send an arbitrary piece of mail through the through the through the postal system, right? You actually don't know if it got there, right? It could get lost along the way and things like that, right? And nobody cares but you, right? The person who sends it and the person who's getting it, presumably. 
+
+But you don't even know if they got it, so unless you tell them somehow that you sent it, which how are you going to do that? That might get lost in the mail. How would you know that they got it? You wouldn't know. And so that's IP at the end of the day. 
+
+**25:05**
+
+So you know, in mid-transit literally, you know, the the router could the power could go out and it could get lost, right? Or maybe it's overwhelmed and it just drops it, which is probably the most common thing that happens. And packets get dropped all of the time. 
+
+A lot of times it's at that first link in terms of like, I'm using Wi-Fi to send my data out or I'm using my cell phone connection to send my data out, gets lost all the time. And so reliability of a lot of networks is like 90%. Not 100—like that's a big, big number of packets that are being lost. 
+
+And so TCP's a big deal because TCP puts the burden on guaranteeing delivery on the operating system, not on your application. Right? So your application could develop a mechanism to have reliable communication over over IP, but most typically it would be over UDP because you still need—we'll get into UDP, but. 
+
+TCP basically you're saying, “Hey operating system, I want you to guarantee delivery to that other thing.” And what it—how it does of this is it requires acknowledgments and it does retries. Right? So this is how you would guarantee delivery is you would—I'm sending the message, I'm expecting it to arrive in a certain amount of time. If it doesn't arrive and I'm expecting them to send a message back to me whenever they get a packet, and if they don't send it in time, I'm going to retry it. 
+
+And if I retry it too many times, I'm going to let you know and tell them it's just not reachable, I can't do it. So it guarantees the delivery or it guarantees that it's going to fail, one of the other. And so TCP is really important for sending things like files, right? You can't send you know half the file and the other half the file gets lost, right? 
+
+**26:40**
+
+Super important. It also guarantees in-order delivery, which is another interesting factor of the internet is when kind of like if you send two letters, you've probably done this and like two things in the same literally the same outing or whatever, same pickup same day, and they come on different days or they arrive on different days. 
+
+There's no guarantee you could send a message you know day one and then send another message day two and the message you sent day two arrives before day one. The internet is no different. Just because it came out of the same place doesn't mean it got routed the same way, doesn't mean it got sorted the same way. So you have no guarantee of these packets that are getting sent arriving in any particular manner. 
+
+TCP provides a way to ensure that all everything gets sent in ordered way, everything got delivered, or it fails. The fails happens a lot. But it guarantees that the application on the other side is going to receive essentially this nice stream of bytes and it's going to be the bytes that I sent out of my application, I don't have to care. At an application level, I don't have to care, right? 
+
+UDP is a very thin layer on top of IP that basically just adds a port and that's about it. Right? Does a little bit of—I can send slightly larger messages than basic IP and they'll either arrive sort of whole or not at all. But it's a very, very thin wrapper on top of IP so the application can send things out, right? As opposed to the the the computer sending things out. 
+
+**28:12**
+
+Now what most applications typically use for communications is a another layer on top, an actual communication protocol. So up until this point we've been just been talking about straight bytes. TCP, UDP, just bytes. There's no—it's kind of like, you know, you're sending over, right, your pictures, right, from your computer over to the M5Stick. 
+
+Yes, it's just bytes, but it's also a picture, right? How do you know it's a picture? Well, you had to agree on a protocol, right? You had to agree that this is what I'm speaking. This is the language part, right? It's not the sound, it's the language that I'm actually speaking, right? It's not just the letters that are on the page, it's, right, the grammar, right? It's that kind of stuff, right? That allows somebody to interpret what you sent. 
+
+That's a protocol, right? A language effectively that is usually a standard of some sort, right? I had you to develop your own standard of how you're going to communicate pictures, right? But you could have certainly used a standard that's out there. There's actually a standard called for serial called SLIP, Serial Line Internet Protocol. 
+
+**29:22**
+
+And so it's basically a way of sort of like using a serial line to communicate IP messages. But you developed your own protocol for this, but typically you're going to use a standard like HTTP, Hypertext Transfer Protocol. All right? And that's typically the, you know, language of the internet, right? 
+
+So you see `http://`, right? It says this is what I'm speaking. I'm speaking HTTP which has a very specific syntax. In fact, if you go over to the internet and you go into—you've probably done this at this point, this is how I did all that web scraping and stuff like that—but if you go to like on Chrome “More Tools” and “Developer Tools” or you can do `Ctrl+Shift+I`, you can actually look at all the network data. 
+
+And you can look at—so when I, for example, load this, right? I get all these HTTP messages that are being sent out. And I can look at the individual calls for this, we can look at the headers that are getting sent out. I don't know if I can see the raw in here. There's probably a way to see the actual raw HTTP. 
+
+But HTTP is literally just text. It is, “Here's your header and then here's your body of your message.” and it reads very much like a letter and then on the other side it knows how to interpret that because there are certain places where there are new lines, right? There's other special characters that are denoting places and then on the recipient side it then parses that out, the web browser that is receiving it is parsing that out and then displaying a web page because typically there's literally a higher-level language in there called HTML that is now being interpreted, right, as this is where structurally the web page is or how the web page is structured and here's other things that you need to retrieve like images and stuff like that, right? 
+
+**31:07**
+
+And so they sometimes they call these things network stacks, right? I keep saying higher and lower level. And so sort of the internet stack is HTTP sits on top of TCP, sits on top of IP, sits on top of Wi-Fi or Ethernet or whatever connected to the internet, sits on top of the physical layer that you are communicating on. Okay. 
+
+Typically when we send these things, we don't send them directly to device, right? So you learned how to directly send something to a device over serial. That is not the typical way we communicate. It's possible, you know, if you are both on the same network you can certainly send a message from your one device directly to the other device using TCP or using UDP or using a layer on top of that, HTTP or MQTT that we'll talk about. 
+
+But typically that's not done. And the reason that's not done is because we don't for security reasons typically like somebody just to be able to connect to us and send us data or read data that that we are—unbeknownst to us, we're publishing, right? So we typically put in place what's known as firewalls. 
+
+**32:21**
+
+We basically put locks on our mailboxes, just like if you live in an apartment complex where anybody can see the mailboxes, you don't typically just have them all open. We do at UGA, which is kind of annoying to me, but if you go into most buildings a mailroom, it's a bunch of open mailboxes that anybody can go into. 
+
+But, you know, at an apartment complex or whatever you typically have locks in your mailbox. That's effectively the firewall, right? Not anybody can go there, you have to have the key, right? Maybe there's a door to the mailroom on top of that, that's another layer of the firewall, right? effectively what firewalls are. You have to have authorization to get through that layer, right? 
+
+So you might need to be speaking the right protocol, you probably need to know what port you're communicating on, it has to be a very specific port, it has to be one that the application the operating system has agreed to open already. There are firewalls in place, locks essentially in place to stop you from communicating directly, right? 
+
+**33:10**
+
+So now typically your operating system, really your network administrator allows you to communicate out. That there's very little restriction on, “I want to communicate to the rest of the world.” That's not always the case. A lot of organizations, like security organizations, things like that, they don't trust you as much as they don't trust the world and so they don't want you communicating out, right? 
+
+UGA's actually pretty open with this, like for the most part you can communicate out. Actually, for the most part you communicate between your devices. And so if you don't run a firewall, you probably should run a firewall because for the most part somebody can try to connect to an application that's running on your computer if you're on the same Wi-Fi network. 
+
+It's probably for a lot of teaching reasons that they don't really restrict this a whole lot, but you can communicate between your devices. You can talk to them. And so there's not really a whole lot of protection. They probably protect the lower ports which are where a lot of applications run that are really important like web servers and things like that, but the higher ports are typically wide open. 
+
+Largely because they kind of need to be because of the way a lot of these things work essentially. When you're communicating with TCP, you're both agreeing to open ports that allow communication and depending on sort of how the firewall's configured, sometimes it doesn't always check because a lot of programs rely on this this fact that they can be sort of flexible with where the origin IP address actually is to allow certain things to happen to literally design to get around firewall restrictions. 
+
+**34:39**
+
+And so UGA probably doesn't restrict this because it would break a lot of the internet if they did. But some organizations will stop you from communicating out, not all of them will stop you from communicating out. Most of them will stop you from communicating in, okay? So almost everyone says that, okay, you can't open literally open a port on your computer and let somebody communicate. 
+
+So even if I wanted to, I can't give you my IP address and and allow you to connect to a server running on my computer. Just won't work. Now how do we address that? Now there's a few different problems here. So one is firewalls. Some is random IP addresses, and so when I connect to UGA's eduroam I don't get the same IP address every time. 
+
+I don't even know—I'd have to somehow have a way to communicate with you to tell you how to communicate with me, which doesn't work. Right? I have to have some you know reliable communication path. And so that's a problem. There's also the issue of what's known as network address translation. 
+
+**35:36**
+
+Network address translation is a way of expanding the Internet Protocol addresses space using ports. And so instead of 32 bits, we can tack on the 16-bit port number and now we have 48—yeah, 48 bits. That's a decent number of IP addresses if you tack on that 16 bits. And so we ran out of IP address space a long time ago. 
+
+But with that extra 16 bits, right, we get 65,536 times more IP addresses. Of course that actually comes at the expense of applications, and so for every port that you use essentially for mapping additional computers, you essentially lose that port for communicating with an application on that computer. 
+
+So there are some limitations to this, but still we get a lot more. But the problem with that is that now we have essentially a redundancy in the number—we have a a one-to-many mapping between IP address and computers. So at your house, for example, or really at UGA, if you go and say, “What is my IP address?” 
+
+**36:40**
+
+Right? So you saw my IP address, I just showed it to you, right? It's `172.21.101.62`, right? That's my IP address. If you go to, you know, “my IP,” what is my IP address? Let me close this. `198.137.18.62`. What's going on? That's my IP address. Not—that's not my IP address, right? My IP address is this. 
+
+Why is that? That's network address translation happening. Right? And so my IP address is not this to the world. My IP address is the IP address of the router that is actually connected to the internet at UGA. And it is—when I go to send a message, right? So when I go to send a message out, what it's effectively doing is creating a temporary mailbox in its port space and then sending the message on my behalf from its IP address out. 
+
+And then keeping acknowledging that, okay, I've sent it out of that port and when I get a message back in on that port, then I'm going to deliver it back over to this other port back to the computer that sent it. That is network address translation. It's how we expanded the internet essentially for free by commandeering this port space that originally TCP and UDP were effectively using. 
+
+And since most of the internet uses TCP and UDP, it's perfectly fine. This would not work if you were not using TCP or UDP because you don't have ports if you're not using TCP and UDP. But most of the internet does that and so most people are perfectly happy because they can still browse their Facebook and send their emails and do all their things, right? Sorry, their their Instagram or whatever, I know you all use Facebook. 
+
+**38:31**
+
+So IP addresses are a complicated topic at best. And so but IoT requires this effectively. I mean we're able to use the internet, right? And and we need to be able to do that. And so typically what ends up happening since I can't connect directly to you because of this whole network address translation problem and I don't know your address and things like that, how do I how do I actually communicate with you? 
+
+Well, there's another way that you can do things where everybody just sort of like communicates out and says, “Hey, I'm here,” right? It's kind of like joining a chat room, right? When I join a chat room, I don't need to tell anybody else how to send me messages. They can just send it to the chat room or like I can publish that I'm there, they can see a list of that and then they can send a message and I will get it by sort of listening to the chat room. 
+
+That's effectively how the internet ends up working when I need to send messages between computers, is they essentially have to register themselves with some authority first that then that authority is going to tell me how to how to connect to them, something that I can connect to. 
+
+And so you're using a third party, a broker if you will. Right? A lot of the the real world works on brokers. Trusted third parties that, you know, I give my money to you, the the broker, and the broker gives the money over there. We both trust each other and everything works out. And so this solves a lot of security problems, it solves a lot of connectivity problems, things like that. 
+
+**40:02**
+
+And so we're going to end up talking a decent amount about MQTT over the next few days. But MQTT is a protocol designed for the Internet of Things, so designed for things that are not, you know, humans basically. Where HTTP is largely designed for for human communication, it's a text-based protocol. 
+
+MQTT is actually a binary protocol. MQTT is designed for sending sort of like short messages that other things subscribe to and they get those messages, and they get those messages in a reliable way. And so we're going to talk again more about MQTT. But you need to be able to connect to those servers. 
+
+So I know I spent a lot of time on this slide because this is something that often causes a lot of confusion, this whole IP addresses and and ports and things like that, and why does all this matter? But it's a very important concept that if you don't get, it's going to be a lot harder to engage with the rest of thing. 
+
+And then just talk about the security layer a little bit, but it can literally be anything. So lots of different things. Lora's another type of radio that a lot of IoT devices use, but Wi-Fi and Bluetooth are probably the big ones that and I guess there's thread now. We we can get into the the radio communication layer, but a lot of the radio actually ends up using like the same spectrum and they're talking slightly different—it's kind of like they're they're shouting in different languages on the same spectrum. 
+
+**41:25**
+
+And so like the 2.4 GHz spectrum, the 5 GHz spectrum, the 6 GHz spectrum, these are open spectrum at a certain power level that a lot of IoT uses. So kind of those 900 MHz is another one that has an open spectrum. That changes actually a lot, so where it's 2.4 and 5 I think are open throughout the world, most like the world that you can go to. 
+
+900 is a weird one where it's like 800 something in some countries and 900 in other ones, but it's close but not exactly the same. But you can use kind of the same radio there so they have like mode switches and stuff like that. But anyway, these are all their own individual discussions. 
+
+Ethernet has actually a lot a lot going on as well, Bluetooth has many different versions. We are going to talk about Bluetooth because this device can speak Wi-Fi and Bluetooth, so. Next thing. Okay, so at this point you should realize that we need some sort of IoT server. Like we're not going to get away with not having an IoT server, that's not going to happen. 
+
+**42:24**
+
+And so you need something—some server, IoT I say IoT but you need some server somewhere that's going to facilitate your connectivity between devices. You cannot communicate directly between devices in a reliable or useful way in most practical circumstances. Even if you were to want to communicate directly, I would still say like get a Raspberry Pi and a router and stick it in the room and that's how we're going to communicate so you're going to have that third party that everybody knows the address of of the Raspberry Pi or whatever and that's how it's going to do the connectivity. 
+
+And so there's always going to be servers in some way. Now there's really two options here. One is a private server that that you control, that you deploy. And this is the reality in most industries, right? So you most industries are not going to use some some public server somewhere, but they're going to actually set up their own private server, they're going to pay for that, they're going to buy some address space on the internet, a real IP address on the internet that they can deploy a real server to, probably in some data center somewhere, that you can communicate with. All right? 
+
+**43:30**
+
+And so you're literally—it's a physical machine that is connected somewhere, but it might be a virtual machine that's running on a physical machine, but it is some space on a physical machine that has a public internet connection. You have a actual IPv4 address, right? That somebody can communicate with. 
+
+Most of the time nowadays this is going to be provisioning a device in the cloud. You can by the way—I mean you can go and buy, you know, from Charter or AT&T or whatever, right? When your—you're paying for your internet, you're paying for a public IP address. You have a public IP address. 
+
+You may not know you have a public IP address, but you do. It's when you go to the “my IP” at your house or whatever, your apartment, you're going to see that you have a public IP address. It is not your computer's address. You can commandeer that address and connect one device to that and you can certainly expose applications and things underneath that. 
+
+It's kind of a dangerous thing to do, but it is okay, it's allowed. They don't block you in any way, and you can host your own servers from your own IP address. You can't do that at UGA. UGA doesn't give you access to what's known as port forward or change anything about where things are getting routed from that public IP address. 
+
+It works the way it works and it's not going to be changed and they refuse to do anything to to help you connect to those things because it's a security risk for them. And so you end up having to buy some public internet space. 
+
+**44:48**
+
+You can provision machines in the cloud for free. This this is something that does exist, it's kind of cool. I'll give you a few different options for this class, if you want to go this route, and it's perfectly fine if you don't actually, but it's kind of a cool thing to engage in, owning a little piece of the internet. 
+
+So one really good option is Oracle. So I use this actually in my research because Oracle gives out an extremely generous free tier. I used to do this Oracle education thing, but it turns out that the only way you're getting an Oracle free tier server—it's free—is by putting in a credit card. And so you can get one for sure, but Oracle Cloud the free tier, what's really amazing about them is they give you 4 terabytes a month of bandwidth. 
+
+A terabyte is a lot of data. No one in this class probably uses a terabyte—4 terabytes of data a month. I don't care what you do, streaming, whatever, you're not using 4 terabytes of data. That's a ton of data transfer. It turns out that's what you pay for on the internet by the way. You you pay for bandwidth. And at some level, storage, which very much relates to bandwidth. 
+
+And so storage and bandwidth are really expensive on the internet. And so that 4 terabytes in AWS terms is worth about a thousand dollars. So if you were to pay for the equivalent amount of storage on AWS it cost you about a thousand dollars. AWS is this like—I never recommend AWS unless Amazon wants to pay me to recommend it. 
+
+**46:12**
+
+I would never recommend it for anybody in this class because it is designed for large-scale enterprises that need the scale they provide. They are absolutely vital to the internet. Amazon goes down, the internet goes down. You know, I just saw that they spent some 200 billion dollars capex on AI data centers, like an astronomical amount. Amazon is the biggest player by far in in cloud services. 
+
+But they're very expensive because they they only really cater to the Netflixes and things like that of the world that need that capacity and and they're willing to pay for it for that reliability, scale, configuration, all that stuff. And it's much, much more expensive as a result. Oracle wants you to buy in. 
+
+Of course, their their paid tiers are actually—I'd still say they're about a tenth of the price of Amazon, but their free tier is extremely generous to try to get you to engage in it. So I highly recommend it if you want to set up your own Oracle Cloud account. You know, I'm a big fan of their free tier. And they give you actually decent computation, you can get a four-core 24 GB RAM server, it's a solid machine, it's probably better than the machine you have sitting in front of you. 
+
+And so it can do a lot. You can run a Minecraft server or whatever you want to do on it, like you literally have full control. And so it's very, very useful. In fact, the server that that Classy runs on is an Oracle free tier server. Right? So Classy, you can, you know, build things that are Discord bots, things like that, all of that will work. 
+
+**47:35**
+
+And the nice thing about this is it stays on 24/7. You don't have to manage the power, right, you have to reset it, it's always going to work, right? This is a problem for anything you're going to do on your own PC, right? Even running at your house, your apartment, like that those servers don't stay up all the time, right? The power goes out all the time, right, somebody's got to be there to click the button to turn it back on, you know the dog's going to run and like unplug it or whatever, like all sorts of bad things happen. 
+
+These are running on, you know, industrial-grade servers, they don't go down very often, like 99.99% reliability, that kind of thing. So Oracle's a really good option. The Google credits that you have in the class can also be used to set up servers. So those credits are not just for using APIs and stuff like that, you can buy time on Google servers. 
+
+Google does have a free tier server, their F1-micro server, which I think is 1/4 of a core of something and like 256 MB of RAM. It's not a lot, but you can run an internet server on there, it'll work fine for like an—and it's free. So they have a free tier, but you can also buy a more expensive tier machine. 
+
+Your user credits go pretty quick. But the cheapest you can buy a server for if you are actually paying for one, I've seen them in the order of like three to five dollars a month. Which—and they're not good at that level, they're way worse than the Oracle server. But if you want to pay for something and you don't want to use the paid tier on one of the big providers which are all going to end up being about 10 to 20 dollars a month for their lowest cost tier. I've seen them for—they're typically called VPS or virtual private servers. You're like buying—you're providing a virtual machine. You're really paying for a virtual machine on these other ones. But if you look for VPS providers, you could probably find one between three and five dollars. Something like that. Used to be a little cheaper but. 
+
+**49:13**
+
+Lots of different options out there. The last option here—and I actually already mentioned this—is port forward specifically. If you actually happen to control your router, you can certainly run a server at home. That's what I'm doing at my house, right, I'm running Home Assistant. I'm actually doing something a little bit different though. 
+
+I'm not forwarding ports to it, I'm doing something much more secure than that, which is this second option. Is to use some sort of public server. And so I need to add to this because there's actually a better option now. So I'm going to go back out of here and do public server. So we're going to do Cloudflare Tunnels. 
+
+This is what I am actually using at my house. So zero authentication, basically free bandwidth to connect and IP—or TCP application, I think it also works UDP—to the internet with a—so actually I take this back, it does have to be HTTP. So Cloudflare Tunnels, so HTTP only, I think. I don't want to say, I'll let you know. 
+
+**50:24**
+
+So Cloudflare Tunnels and Ngrok and PythonAnywhere is actually kind of neat, you get one—so if you've ever anyone heard of PythonAnywhere? It's kind of neat. It basically gives you like run one server for free. You can pay for it of course, a lot of these things have free tiers, they're all freemium whatever services. 
+
+And so PythonAnywhere you can run one application in the cloud. Ngrok and Cloudflare Tunnels are basically the same thing. And so what this does is it uses a link to their server to set up essentially a tunnel that you can data you send from a port on your computer is then now routed through their tunnel and then served on their port on their computer to somebody else, but they give you a public IP address or really a public domain. 
+
+They don't give you the IP address. I kind of left something out of the discussions on IoT messaging in talking about domains. So when I was mentioning the word—I'm sure you heard IP addresses before and heard of IP before, I'd be surprised if you hadn't. But you're mostly familiar with domains, right? `www.whatever.com`. 
+
+Those are domain names. And so there's a whole domain name system that maps names to numbers. And so when you communicate with to most services that normally that communicate over IP, you can ask for a domain first and in certain protocols you communicate the domain as well. 
+
+**51:57**
+
+And so HTTP is one of those protocols where when I send a message, I include the domain with that, and that's a very, very important thing because the recipient can use that domain to know how you're accessing it. And so that allows you to like run 500 domains off of one computer, right? It's all the same IP address but it's routed differently depending on what's set. 
+
+Or you can just use the domain to retrieve the IP address and it has no idea what domain you sent, you're just literally communicating with that IP address. But most like websites, they might work communicating with their directly with the IP address, but that's not actually guaranteed to work. 
+
+So you might be able to like find out, in fact you can go and let's ping `google.com` and you'll get an IP address for `google.com`. And if you take that and go to your web browser and type that in, you get `google.com`. Right? It's an IP address, it's just they happen to allow that, right? 
+
+If you find the IP address of—let me think of a one that's not going to work. Some—most of like the major services will work this way, like their default is just going to be whatever. So like if it doesn't route to somewhere, we're going to send you there. But it doesn't have to, is what what I'm kind of getting at, is it can actually route straight IP addresses somewhere else than domain names. 
+
+But IP still works, like IP is this like lower level for communicating between the machines. But HTTP can add another layer in that and that includes the domain name typically when you're talking HTTP. All right. 
+
+It's 9:30. I know we didn't really do anything today. Make sure you saw at the beginning that whole quizzing thing, that is kind of what your quizzes are going to look like. I'm going to put in your programs, so everyone's going to have their own labeled quiz, it is going to be your program that you submitted, okay? 
+
+So if you don't have something to—I have not generated them yet because I know people end up submitting late and stuff like that. And so it's going to be sometime between now and Friday that I actually pull these quizzes and I generate these quizzes, right? You can do the exact same thing, I'm not doing anything magic, there's no special data that I have that you don't have, all right? 
+
+And so if I don't find one for you, I'm going to use my own and I will send that out as well, okay? And so but it's going to be based on your actual program, so make sure you know how your programs work, okay? And I trust AI is going to have the right answer to these. 
+
+## **AI Summary**
+
+The lecture focuses on the foundational concepts of the **Internet of Things (IoT)**, networking, and the use of AI for personalized learning.
+
+### **1. AI-Generated Quizzes and Code Ownership**
+*   **Study Resource**: The instructor demonstrates using AI to generate conceptual quizzes based on students' specific code submissions and class lectures.
+*   **Conceptual Focus**: Quizzes will focus on the **logic and purpose** of the code rather than minute syntax (e.g., semicolons).
+*   **Responsibility**: Students are encouraged to use AI to test their own understanding, emphasizing that "doing cool stuff" requires actually knowing how the underlying functions work (e.g., serial communication, state machines, and endianness).
+
+### **2. Introduction to the Internet of Things (IoT)**
+*   **Definition**: IoT refers to the massive network of everyday devices (cars, appliances, infrastructure) connected to the internet for **telemetry (sensing)** and **control (action)**.
+*   **Real-world Application**: The instructor showcases a Home Assistant dashboard monitoring cameras, thermostats, energy usage, and even basement radon levels.
+*   **Core Constraints**:
+    *   **Connectivity**: Often Wi-Fi or Bluetooth; sometimes infrared (IR) for local control.
+    *   **Power Management**: Many devices are battery-operated, requiring low-power protocols like Bluetooth Low Energy (BLE).
+    *   **Security**: The need for encryption and secure access, especially as devices lack traditional login interfaces.
+    *   **Cost**: To be ubiquitous, IoT components must be extremely cheap (e.g., ESP32 microcontrollers).
+
+### **3. Networking Foundations**
+*   **Internet Protocol (IP)**:
+    *   **Addressing**: IP addresses facilitate device-to-device communication, similar to a postal address.
+    *   **IPv4 vs. IPv6**: IPv4 uses 32-bit addresses (e.g., `198.137.18.62`), while the newer IPv6 provides a significantly larger address space.
+*   **TCP vs. UDP**:
+    *   **TCP (Transmission Control Protocol)**: Guaranteed, in-order delivery via acknowledgments and retries; essential for file transfers.
+    *   **UDP (User Datagram Protocol)**: Low-overhead, faster, but unreliable; used where speed is prioritized over accuracy.
+*   **Ports**: Ports serve as "mailboxes" for specific applications on a device, allowing the operating system to route data to the correct software.
+
+### **4. Communication Protocols & Connectivity Barriers**
+*   **HTTP vs. MQTT**:
+    *   **HTTP**: A text-based protocol used primarily for web browsing and human-readable data.
+    *   **MQTT**: A binary protocol specifically designed for IoT, using a **broker** system to facilitate communication between devices that cannot "see" each other directly.
+*   **The Barrier of NAT and Firewalls**:
+    *   **Firewalls**: Security measures that typically block incoming connections.
+    *   **NAT (Network Address Translation)**: A method used by routers to map multiple local devices to a single public IP address, complicating direct device-to-device access over the internet.
+*   **Hosting Solutions**:
+    *   **Private Servers**: Options like the Oracle Cloud free tier or Google Cloud credits provide a stable, 24/7 environment for IoT brokers.
+    *   **Tunnels**: Services like **Cloudflare Tunnels** or **Ngrok** create secure paths through firewalls to access local devices remotely without complex port forwarding.

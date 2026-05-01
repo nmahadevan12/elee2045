@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic page metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Dashboard</title>
+
+    <!-- Simple styling for layout and appearance -->
+    <style>
+      body { font-family: Arial, sans-serif; margin: 24px; } /* Page font + spacing */
+      .card { border: 1px solid #ccc; border-radius: 8px; padding: 12px; margin-bottom: 12px; } /* Card UI */
+      form { margin: 6px 0; } /* Space between forms */
+      input, button { padding: 6px; } /* Input/button spacing */
+      .done { text-decoration: line-through; color: #666; } /* Completed todo styling */
+    </style>
+  </head>
+
+  <body>
+    <!-- Page title -->
+    <h1>Smart Assistant Dashboard</h1>
+
+    <!-- If NOT authenticated, show login form -->
+    {% if not authed %}
+    <div class="card">
+      <h3>Login</h3>
+      <form method="post">
+        <!-- Hidden field tells backend what action to perform -->
+        <input type="hidden" name="action" value="login" />
+
+        <!-- Password input -->
+        <input type="password" name="password" placeholder="Dashboard password" required />
+
+        <!-- Submit login -->
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+
+    {% else %}
+    <!-- If authenticated, show dashboard -->
+
+    <!-- Logout link -->
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+
+    <!-- Add Todo Section -->
+    <div class="card">
+      <h3>Add Todo</h3>
+      <form method="post">
+        <input type="hidden" name="action" value="add_todo" />
+
+        <!-- Input for new todo -->
+        <input type="text" name="text" placeholder="New todo" required />
+
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <!-- Todo List Section -->
+    <div class="card">
+      <h3>Todos</h3>
+
+      <!-- Loop through todos -->
+      {% for t in todos %}
+      <div>
+        <!-- Pin/Unpin button (star icon) -->
+        <button
+          onclick="togglePin({{ t.id }}, this)"
+          title="Pin to top"
+          style="background:none; border:none; cursor:pointer; font-size:1.2em;">
+          {{ '⭐' if t.pinned else '☆' }}
+        </button>
+
+        <!-- Todo text (strikethrough if done) -->
+        <span class="{{ 'done' if t['done'] else '' }}">{{ t['text'] }}</span>
+
+        <!-- Delete todo form -->
+        <form method="post" style="display:inline;">
+          <input type="hidden" name="action" value="delete_todo" />
+          <input type="hidden" name="todo_id" value="{{ t['id'] }}" />
+          <button type="submit">Delete</button>
+        </form>
+
+        <!-- Edit todo form -->
+        <form method="post" style="display:inline;">
+          <input type="hidden" name="action" value="edit_todo" />
+          <input type="hidden" name="todo_id" value="{{ t['id'] }}" />
+
+          <!-- New text for update -->
+          <input type="text" name="text" placeholder="Edit todo" required />
+
+          <button type="submit">Update</button>
+        </form>
+      </div>
+
+      <!-- If no todos exist -->
+      {% else %}
+      <p>No todos.</p>
+      {% endfor %}
+    </div>
+
+    <!-- Voice Notes Section -->
+    <div class="card">
+      <h3>Voice Notes</h3>
+
+      <!-- Add new note -->
+      <form method="post">
+        <input type="hidden" name="action" value="add_note" />
+
+        <!-- Transcript text -->
+        <input type="text" name="transcript" placeholder="Manual note text" required />
+
+        <!-- Optional summary -->
+        <input type="text" name="summary" placeholder="Optional summary" />
+
+        <button type="submit">Add Note</button>
+      </form>
+
+      <!-- Loop through notes -->
+      {% for n in notes %}
+      <div>
+        <!-- Full transcript -->
+        <p>{{ n['transcript'] }}</p>
+
+        <!-- Summary display -->
+        <p><b>Summary:</b> {{ n['summary'] or '(none)' }}</p>
+
+        <!-- If note has audio, show player -->
+        {% if n['audio_path'] %}
+        <audio controls src="{{ url_for('audio', note_id=n['id']) }}"></audio>
+        {% else %}
+        <p><i>No audio file (manual note)</i></p>
+        {% endif %}
+
+        <!-- Edit note form -->
+        <form method="post" style="display:inline;">
+          <input type="hidden" name="action" value="edit_note" />
+          <input type="hidden" name="note_id" value="{{ n['id'] }}" />
+
+          <!-- Editable fields -->
+          <input type="text" name="transcript" value="{{ n['transcript'] }}" required />
+          <input type="text" name="summary" value="{{ n['summary'] or '' }}" />
+
+          <button type="submit">Update Note</button>
+        </form>
+
+        <!-- Delete note -->
+        <form method="post" style="display:inline;">
+          <input type="hidden" name="action" value="delete_note" />
+          <input type="hidden" name="note_id" value="{{ n['id'] }}" />
+
+          <button type="submit">Delete Note</button>
+        </form>
+      </div>
+
+      <!-- If no notes -->
+      {% else %}
+      <p>No notes.</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- JavaScript for pin/unpin functionality -->
+    <script>
+    function togglePin(todoId, btn) {
+      // Send POST request to backend API
+      fetch(`/api/todos/${todoId}/pin`, { method: 'POST' })
+        .then(r => r.json()) // Parse JSON response
+        .then(data => {
+          // Update button icon based on new state
+          btn.textContent = data.pinned ? '⭐' : '☆';
+        });
+    }
+    </script>
+  </body>
+</html>
